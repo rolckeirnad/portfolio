@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import profile from '../assets/images/1.png';
 
 function Sidebar() {
@@ -22,10 +23,10 @@ function Sidebar() {
       </div>
       <hr />
       <ul ref={menuRef} className="social-icons nav nav-pills flex-column mb-auto px-2">
-        <li className="nav-item"><a id="id1" onClick={clickHandler} className="active nav-link text-white" href="#">About me</a></li>
-        <li className="nav-item"><a id="id2" onClick={clickHandler} className="nav-link text-white" href="#">Resume</a></li>
-        <li className="nav-item"><a id="id3" onClick={clickHandler} className="nav-link text-white" href="#">Portfolio</a></li>
-        <li className="nav-item"><a id="id4" onClick={clickHandler} className="nav-link text-white" href="#">Contact Me</a></li>
+        <li className="nav-item"><Link onClick={clickHandler} className="active nav-link text-white" to="/">About me</Link></li>
+        <li className="nav-item"><Link onClick={clickHandler} className="nav-link text-white" to="/resume">Resume</Link></li>
+        <li className="nav-item"><Link onClick={clickHandler} className="nav-link text-white" to="/portfolio">Portfolio</Link></li>
+        <li className="nav-item"><Link onClick={clickHandler} className="nav-link text-white" to="/contact">Contact Me</Link></li>
       </ul>
     </div>
   );
