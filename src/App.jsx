@@ -1,11 +1,11 @@
 import React from 'react';
-import pokemon from './assets/images/1.png';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div>
-      <h2>Welcome to React Template with Webpack5</h2>
-      <img src={pokemon} alt="" />
+    <div className="h-100 row d-flex">
+      <Sidebar />
+      <div className="bg-secondary col">Content</div>
     </div>
   );
 }
