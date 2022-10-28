@@ -27,8 +27,8 @@ function Sidebar() {
       <hr />
       <ul ref={menuRef} className="social-icons nav nav-pills flex-column mb-auto px-2">
         <li className="nav-item"><Link className="nav-link text-white" to="/">About me</Link></li>
-        <li className="nav-item"><Link className="nav-link text-white" to="/resume">Resume</Link></li>
         <li className="nav-item"><Link className="nav-link text-white" to="/portfolio">Portfolio</Link></li>
+        <li className="nav-item"><Link className="nav-link text-white" to="/resume">Resume</Link></li>
         <li className="nav-item"><Link className="nav-link text-white" to="/contact">Contact Me</Link></li>
       </ul>
     </div>
