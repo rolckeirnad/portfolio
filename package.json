@@ -45,6 +45,7 @@
     "@tanstack/react-query": "^4.13.0",
     "autoprefixer": "^10.4.12",
     "bootstrap": "^5.2.2",
+    "date-fns": "^2.29.3",
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",
     "postcss": "^8.4.18",
