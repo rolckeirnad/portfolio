@@ -22,6 +22,8 @@ const compareFn = (a, b) => {
   return 0;
 };
 
+const excludedIds = ['468005508'];
+
 function Portfolio() {
   const { data: repos, isSuccess } = useQuery(reposQuery());
 
@@ -30,7 +32,9 @@ function Portfolio() {
       <h1 className="display-5 fw-bold lh-1 px-1">Portfolio</h1>
       <p>Here are some of my projects. Click on the image to visit live preview</p>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
-        {isSuccess && repos.filter((repo) => repo.has_pages).sort((a, b) => compareFn(a, b))
+        {isSuccess && repos
+          .filter((repo) => (repo.has_pages && !excludedIds.includes(repo.id.toString())))
+          .sort((a, b) => compareFn(a, b))
           .map((repo) => (
             <div key={repo.id} className="col">
               <Card info={{ ...repo }} />
