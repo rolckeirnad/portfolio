@@ -1,22 +1,30 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import { fetchUser } from './github';
 
-function App() {
-  const [user, setUser] = useState();
+const userQuery = () => ({
+  queryKey: ['user'],
+  queryFn: async () => fetchUser(),
+});
 
-  useQuery(['user'], async () => {
-    const result = await fetchUser();
-    setUser(result);
-    return result;
-  }, {
-    refetchOnWindowFocus: false,
+export const loader = (queryClient) => async () => {
+  const query = userQuery();
+  return (
+    queryClient.getQueryData(query.queryKey)
+    ?? (queryClient.fetchQuery({ ...query, staleTime: Infinity }))
+  );
+};
+
+function App() {
+  const { data: user, isSuccess } = useQuery(userQuery(), {
+    staleTime: 1000 * 60 * 60,
   });
+
   return (
     <div className="h-100 row d-flex">
-      {user && (
+      {isSuccess && (
         <>
           <Sidebar user={user} />
           <Outlet />
