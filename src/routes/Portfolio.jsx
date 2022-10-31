@@ -1,18 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
 import { parseISO } from 'date-fns';
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import Card from '../components/Card';
-import { fetchRepos } from '../github';
-
-const reposQuery = () => ({
-  queryKey: ['repos'],
-  queryFn: async () => fetchRepos(),
-});
-
-export const loader = (queryClient) => async () => {
-  const query = reposQuery();
-  return queryClient.fetchQuery({ ...query, staleTime: 1000 * 60 * 30 });
-};
 
 const compareFn = (a, b) => {
   const parsedA = parseISO(a.pushed_at);
@@ -25,7 +14,7 @@ const compareFn = (a, b) => {
 const excludedIds = ['468005508'];
 
 function Portfolio() {
-  const { data: repos, isSuccess } = useQuery(reposQuery());
+  const { data: repos, isSuccess } = useOutletContext();
 
   return (
     <div className="col bg-secondary container p-4 px-xl-5 h-100 overflow-auto">

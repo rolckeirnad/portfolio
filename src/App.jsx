@@ -2,11 +2,16 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import { fetchUser } from './github';
+import { fetchRepos, fetchUser } from './github';
 
 const userQuery = () => ({
   queryKey: ['user'],
   queryFn: async () => fetchUser(),
+});
+
+const reposQuery = () => ({
+  queryKey: ['repos'],
+  queryFn: async () => fetchRepos(),
 });
 
 export const loader = (queryClient) => async () => {
@@ -22,12 +27,16 @@ function App() {
     staleTime: 1000 * 60 * 60,
   });
 
+  const reposStatus = useQuery(reposQuery(), {
+    staleTime: 1000 * 60 * 60,
+  });
+
   return (
     <div className="h-100 row d-flex">
       {isSuccess && (
         <>
           <Sidebar user={user} />
-          <Outlet />
+          <Outlet context={reposStatus} />
         </>
       )}
     </div>
