@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
@@ -18,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/rolckeirnad/webpack-template/issues"
   },
-  "homepage": "https://github.com/rolckeirnad/webpack-template#readme",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
@@ -54,5 +55,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2"
-  }
+  },
+  "homepage": "http://rolckeirnad.github.io/portfolio"
 }
