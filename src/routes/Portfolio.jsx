@@ -4,8 +4,8 @@ import { useOutletContext } from 'react-router-dom';
 import Card from '../components/Card';
 
 const compareFn = (a, b) => {
-  const parsedA = parseISO(a.pushed_at);
-  const parsedB = parseISO(b.pushed_at);
+  const parsedA = parseISO(a.created_at);
+  const parsedB = parseISO(b.created_at);
   if (parsedA < parsedB) return 1;
   if (parsedB < parsedA) return -1;
   return 0;
