@@ -16,8 +16,6 @@ const router = (queryClient) => (
       >
         <Route path="" element={<Home />} />
         <Route path="portfolio" element={<Portfolio />} />
-        <Route path="resume" element={<div className="col">Resume page</div>} />
-        <Route path="contact" element={<div className="col">Contact page</div>} />
       </Route>,
     ),
   )
