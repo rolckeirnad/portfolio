@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
@@ -56,5 +56,5 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2"
   },
-  "homepage": "http://rolckeirnad.github.io/portfolio"
+  "homepage": "https://rolckeirnad.github.io/portfolio/"
 }
