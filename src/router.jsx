@@ -1,12 +1,12 @@
 import React from 'react';
-import { createBrowserRouter, Route, createRoutesFromElements } from 'react-router-dom';
+import { Route, createRoutesFromElements, createHashRouter } from 'react-router-dom';
 
 import App, { loader as userLoader } from './App';
 import Home from './routes/Home';
 import Portfolio from './routes/Portfolio';
 
 const router = (queryClient) => (
-  createBrowserRouter(
+  createHashRouter(
     createRoutesFromElements(
       <Route
         exact
