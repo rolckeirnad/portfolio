@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import {
-  format, formatDistance, parseISO, startOfToday,
+  format, parseISO,
 } from 'date-fns';
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -9,7 +9,7 @@ import profile from '../assets/images/1.png';
 
 function Sidebar({ user }) {
   const {
-    login, avatar_url, name, location, html_url, created_at, updated_at,
+    login, avatar_url, name, location, html_url, created_at,
   } = user;
   const urlLocation = useLocation();
   const menuRef = useRef();
@@ -47,15 +47,6 @@ function Sidebar({ user }) {
           User since:
           {' '}
           <span className="text-center px-1">{format(parseISO(created_at), 'MMM/dd/yyyy') }</span>
-        </p>
-        <p className="d-flex flex-column fs-6 my-0">
-          Last activity:
-          {' '}
-          <span className="text-center px-1">
-            {formatDistance(parseISO(updated_at), startOfToday())}
-            {' '}
-            ago
-          </span>
         </p>
       </div>
       )}
