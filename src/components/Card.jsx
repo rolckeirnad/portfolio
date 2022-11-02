@@ -16,7 +16,7 @@ function Card({ info }) {
   const [loaded, setLoaded] = useState(false);
   const [url, setUrl] = useState();
   const {
-    id, name, description, pushed_at, topics,
+    id, name, description, created_at, topics,
   } = info;
 
   loadImage(`https://raw.githubusercontent.com/rolckeirnad/${name}/main/preview.png`)
@@ -39,7 +39,7 @@ function Card({ info }) {
             <img
               src={url}
               className={loaded ? 'card-img-top card-repo-image' : 'visually-hidden'}
-              alt="kitty"
+              alt={name}
             />
           </a>
         </div>
@@ -55,7 +55,7 @@ function Card({ info }) {
         <small className="text-muted">
           Created
           {' '}
-          {`${formatDistance(parseISO(pushed_at), startOfToday())}`}
+          {`${formatDistance(parseISO(created_at), startOfToday())}`}
           {' '}
           ago
         </small>
