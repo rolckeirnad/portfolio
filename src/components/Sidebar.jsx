@@ -5,7 +5,7 @@ import {
 } from 'date-fns';
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import profile from '../assets/images/1.png';
+import profile from '../assets/images/rolckeirnad.png';
 
 function Sidebar({ user }) {
   const {

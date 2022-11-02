@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from '../assets/images/1.png';
+import image from '../assets/images/cartoon.png';
 
 function Home() {
   return (
