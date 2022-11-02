@@ -11,7 +11,7 @@ const compareFn = (a, b) => {
   return 0;
 };
 
-const excludedIds = ['468005508'];
+const excludedIds = ['468005508', '560231690', '502205235'];
 
 function Portfolio() {
   const { data: repos, isSuccess } = useOutletContext();
@@ -19,7 +19,7 @@ function Portfolio() {
   return (
     <div className="col bg-secondary container p-4 px-xl-5 h-100 overflow-auto">
       <h1 className="display-5 fw-bold lh-1 px-1">Portfolio</h1>
-      <p>Here are some of my projects. Click on the image to visit live preview</p>
+      <p className="display-6">Here are some of my projects. Click on the image to open a live preview in a new tab</p>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
         {isSuccess && repos
           .filter((repo) => (repo.has_pages && !excludedIds.includes(repo.id.toString())))
