@@ -11,7 +11,7 @@ function Home() {
         </div>
         <div className="col-lg-6">
           <h1 className="display-5 fw-bold lh-1 px-1">Daniel Gallardo</h1>
-          <h2 className="display-6 lh-1 px-1">Frontend Jr. Developer</h2>
+          <h2 className="display-6 lh-1 px-1">Jr. Frontend Developer</h2>
           <p className="fs-4">
             I&apos;m an autodidact person who likes to solve problems. Currently, I&apos;m focused
             on kickstarting a career in web development
@@ -76,7 +76,7 @@ function Home() {
           You can check my portfolio with all my projects
           hosted on GitHub pages clicking on the following button
         </p>
-        <button type="button" className="btn btn-primary bt-lg px-4"><Link to="portfolio" className="nav-link text-white">Check my portfolio</Link></button>
+        <button type="button" className="btn btn-primary btn-lg px-4"><Link to="portfolio" className="nav-link text-white">Check my portfolio</Link></button>
       </div>
     </div>
   );
