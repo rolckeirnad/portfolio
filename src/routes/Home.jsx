@@ -14,7 +14,7 @@ function Home() {
           <h2 className="display-6 lh-1 px-1">Jr. Frontend Developer</h2>
           <p className="fs-4">
             I&apos;m an autodidact person who likes to solve problems. Currently, I&apos;m focused
-            on kickstarting a career in web development
+            on kick-starting a career in web development
           </p>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
             <button type="button" className="btn btn-primary btn-lg px-4"><Link to="portfolio" className="nav-link text-white">Portfolio</Link></button>
@@ -27,11 +27,12 @@ function Home() {
           <h2 className="display-6 fw-bold lh1 px-1">About me</h2>
           <p className="styled-links fs-4 px-4">
             My name is Daniel and I started this journey just before pandemic.
-            I applied for a scholarship at a recognized bootcamp but unfortunately it was rejected.
+            I applied for a scholarship at a recognized bootcamp, and although I didn&apos;t get
+            it, I started learning by myself watching videos on YouTube during my free time.
             During pandemic I had temporarily home office work, so I used the time saved from my
-            commutes to start learning by myself.
+            commutes to continue learning.
 
-            I started with
+            With more free time, I started with
             {' '}
             <a href="https://www.freecodecamp.org/">freeCodeCamp</a>
             {' '}
