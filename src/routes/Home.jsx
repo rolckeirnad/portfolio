@@ -18,7 +18,6 @@ function Home() {
           </p>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
             <button type="button" className="btn btn-primary btn-lg px-4"><Link to="portfolio" className="nav-link text-white">Portfolio</Link></button>
-            <button type="button" className="btn btn-primary btn-lg px-4"><Link to="resume" className="nav-link text-white">Resume</Link></button>
           </div>
         </div>
       </div>
